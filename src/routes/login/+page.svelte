@@ -27,6 +27,13 @@
 			console.error(err);
 		}
 	}
+
+	async function handleDiscordLogin() {
+		await authClient.signIn.social({
+			provider: 'discord',
+			callbackURL: '/dashboard'
+		});
+	}
 </script>
 
 <div class="flex min-h-screen items-center justify-center bg-gray-100">
@@ -59,6 +66,13 @@
 			class="w-full rounded bg-blue-600 py-2 text-white transition hover:bg-blue-700"
 		>
 			Sign In
+		</button>
+		<button
+			type="button"
+			on:click={handleDiscordLogin}
+			class="mt-4 w-full rounded bg-gray-800 py-2 text-white transition hover:bg-gray-900"
+		>
+			Login with Discord
 		</button>
 
 		<p class="mt-4 text-center text-sm text-gray-600">

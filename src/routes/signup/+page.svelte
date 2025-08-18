@@ -1,5 +1,5 @@
 <script>
-	import { redirect } from '@sveltejs/kit';
+	import { authClient } from '$lib/auth-client.js';
 
 	let name = '';
 	let email = '';
@@ -9,6 +9,13 @@
 	export let form;
 
 	if (form?.success) {
+	}
+
+	async function handleDiscordLogin() {
+		await authClient.signIn.social({
+			provider: 'discord',
+			callbackURL: '/dashboard'
+		});
 	}
 </script>
 
@@ -72,6 +79,13 @@
 			class="w-full rounded bg-blue-600 py-2 text-white transition hover:bg-blue-700"
 		>
 			Sign Up
+		</button>
+		<button
+			type="button"
+			on:click={handleDiscordLogin}
+			class="mt-4 w-full rounded bg-gray-800 py-2 text-white transition hover:bg-gray-900"
+		>
+			Continue with Discord
 		</button>
 		<p class="mt-4 text-center text-sm text-gray-600">
 			Already have an account? <a href="/login" class="text-blue-600 hover:underline">Sign In</a>

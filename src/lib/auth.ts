@@ -12,7 +12,8 @@ export const auth = betterAuth({
 		accountLinking: {
 			enabled: true,
 			trustedProviders: ['discord'],
-			allowDifferentEmails: true
+			allowDifferentEmails: true,
+			updateUserInfoOnLink: true
 		}
 	},
 	emailAndPassword: {
@@ -42,5 +43,11 @@ export const auth = betterAuth({
 			});
 		},
 		sendOnSignUp: true
+	},
+	socialProviders: {
+		discord: {
+			clientId: process.env.DISCORD_CLIENT_ID as string,
+			clientSecret: process.env.DISCORD_CLIENT_SECRET as string
+		}
 	}
 });

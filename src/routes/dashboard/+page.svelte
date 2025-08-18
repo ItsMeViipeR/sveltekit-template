@@ -17,6 +17,13 @@
 		await authClient.sendVerificationEmail({ email: user.email, callbackURL: '/dashboard' });
 	}
 
+	async function handleDiscordLogin() {
+		await authClient.linkSocial({
+			provider: 'discord',
+			callbackURL: '/dashboard'
+		});
+	}
+
 	onMount(refreshSession);
 </script>
 
@@ -30,6 +37,11 @@
 		</h1>
 	{/if}
 	<h1>Hello {user?.name}</h1>
+	<button
+		on:click={handleDiscordLogin}
+		class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"
+		>Login with Discord</button
+	>
 {:else}
 	<h1>Please sign in to see your dashboard</h1>
 {/if}
