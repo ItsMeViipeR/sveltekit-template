@@ -42,7 +42,7 @@
 	<button
 		on:click={handleDiscordLogin}
 		class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"
-		>Login with Discord</button
+		>Link Discord</button
 	>
 {:else}
 	<h1>Please sign in to see your dashboard</h1>
