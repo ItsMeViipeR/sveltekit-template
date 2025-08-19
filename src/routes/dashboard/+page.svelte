@@ -2,6 +2,8 @@
 	import { onMount } from 'svelte';
 	import { authClient } from '$lib/auth-client';
 	import type { Session, User } from 'better-auth';
+	import { m } from '$lib/paraglide/messages';
+	import { setLocale } from '$lib/paraglide/runtime';
 	let session: Session | null = null;
 	let user: User | null = null;
 
@@ -36,7 +38,7 @@
 			>
 		</h1>
 	{/if}
-	<h1>Hello {user?.name}</h1>
+	<h1>{m.hello_world({ name: user?.name! })}</h1>
 	<button
 		on:click={handleDiscordLogin}
 		class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"

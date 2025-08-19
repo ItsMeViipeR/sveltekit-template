@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { authClient } from '$lib/auth-client';
 	import type { Session, User } from 'better-auth';
+	import { getLocale, setLocale } from '$lib/paraglide/runtime';
 	let menuOpen = false;
 	let session: Session | null = null;
 	let user: User | null = null;
@@ -11,6 +12,8 @@
 		session = data?.session ?? null;
 		user = data?.user ?? null;
 	}
+
+	const locale = getLocale();
 
 	onMount(refreshSession);
 </script>
@@ -24,6 +27,15 @@
 		<!-- Desktop Nav -->
 		<nav class="hidden items-center space-x-6 md:flex">
 			<a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+			{#if locale === 'en'}
+				<button on:click={() => setLocale('fr')} class="text-gray-700 hover:text-blue-600"
+					>FR</button
+				>
+			{:else}
+				<button on:click={() => setLocale('en')} class="text-gray-700 hover:text-blue-600"
+					>EN</button
+				>
+			{/if}
 			{#if session}
 				<button
 					class="cursor-pointer rounded-sm bg-red-600 px-3 py-1 text-white"
