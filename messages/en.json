@@ -1,4 +1,14 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+	"hello_world": "Hello, {name}!",
+	"verify_email": "Please verify your email to access your dashboard.",
+	"resend_email": "Resend Verification Email",
+	"link_discord": "Link Discord",
+	"your_stats": "Your Stats",
+	"profile_settings": "Profile Settings",
+	"coming_soon": "Coming soon...",
+	"your_dashboard": "Your Dashboard",
+	"manage_account_preferences": "Manage your account and preferences.",
+	"sign_in": "Please sign in to see your dashboard",
+	"access_features": "Access personalized features and stats after signing in."
 }

@@ -1,4 +1,14 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from fr!"
+	"hello_world": "Bonjour, {name}!",
+	"verify_email": "Veuillez vérifier votre e-mail pour accéder à votre tableau de bord.",
+	"resend_email": "Renvoyer l'e-mail de vérification",
+	"link_discord": "Lier Discord",
+	"your_stats": "Vos statistiques",
+	"profile_settings": "Paramètres du profil",
+	"coming_soon": "À venir...",
+	"your_dashboard": "Votre tableau de bord",
+	"manage_account_preferences": "Gérer votre compte et vos préférences.",
+	"sign_in": "Veuillez vous connecter pour voir votre tableau de bord.",
+	"access_features": "Accédez à des fonctionnalités et des statistiques personnalisées après vous être connecté."
 }
